@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - A-JETS</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .brief-about-side2 {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 100%;
+        }
+
+    
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: teal;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 250px;
+            position: relative;
+        }
+        .card i {
+            font-size: 30px;
+            color: #ff7e5f;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        .contact input, .contact textarea {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .contact button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer .footer-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        footer .footer-item {
+            text-align: center;
+        }
+        footer .footer-item i {
+            color: #ff7e5f;
+            margin-bottom: 5px;
+        }
+        footer p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <nav class="navigation-main">
+
+
+        
+        <div class="container-fluid">
+
+
+            
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><i
+                        class="fa fa-bars" aria-hidden="true"></i></button>
+                <a class="navbar-brand" href="#"><img class="img-responsive" src="assets/img/a_jets.jpg" alt="" /></a>
+
+            </div>
+            
+
+
+          
+            <div class="navbar-header">
+
+
+
+            </div>
+            
+
+
+           
+            <div id="navbar" class="navbar-collapse collapse">
+
+
+                
+                <ul class="navigation-items nav navbar-nav navbar-right">
+
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                   
+
+
+                </ul>
+
+                
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+     
+
+
+
+    </nav>
+  
+    <div class="background-intro">
+
+
+        
+        <div class="background-intro-inner">
+
+            <div class="background-intro-img" data-depth="0.1  "></div>
+
+        </div>
+        
+
+
+    </div>
+  
+
+
+
+    
+    <div class="about-intro">
+        <h1>
+            CONTACT US
+        </h1>
+    </div>
+
+    
+    <div class="about-intro-button">
+        <button>
+            <a href="index.html">HOME </a> &nbsp; | &nbsp;
+            <a> CONTACT</a>
+        </button>
+    </div>
+
+    
+    <div class="brief-about-side2">
+        <h3 style="font-family: sans-serif; font-size: medium; font-style: normal;"> CONTACT US</h3>
+        <h1 style="color:teal">Feel free to get in touch with A-JETS Aviation</h1>
+    </div>
+    <div class="cards-container">
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h2>Where We Are</h2>
+            <p>Kotoka international Airport</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-envelope"></i>
+            <h2>Send Email</h2>
+            <p>info@ajets.com</p>
+            <p>sales@ajets.com</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-phone"></i>
+            <h2>Call Now</h2>
+            <p>+233 (0) 533 600 065</p>
+            <p>+233 (0) 207 820 840</p>
+        </div>
+    </div>
+    
+    <form class="contact">
+        <input type="text" id="text" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="tel" id="Phone" placeholder="Phone Number" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea name="messages" id="messages" placeholder="Write Your Message" required></textarea>
+        <button type="submit">SEND A MESSAGE</button>
+    </form>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>1 Tesano Crescent</p>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-envelope"></i>
+                <p>archangel7480@gmail.com</p>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-phone"></i>
+                <p><a href="tel:+233533600065" style="color: white; text-decoration: none;">+233 533 600 065</a></p>
+            </div>
+        </div>
+        <p>&copy; 2025 A-JETS Aviation. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery (Needed for Bootstrap JavaScript) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

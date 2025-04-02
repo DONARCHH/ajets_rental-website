@@ -1,0 +1,1046 @@
+<!doctype html>
+
+<html lang="en">
+
+
+<head>
+
+
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="robots" content="noodp">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- PAGE TITLE -->
+    <title>Home - A-JETS </title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        const jets = ["Gulfstream G650", "Bombardier Global 7500", "Cessna Citation X", "Phenom 100", "HondaJet Elite II", "Gulfstream G550", "Cessna Citation XLS", "Dassault Falcon 8X", "Embraer Praetor 600"];
+
+        function autocompleteSearch() {
+            let input = document.getElementById("jetSearch");
+            let suggestions = document.getElementById("suggestions");
+            suggestions.innerHTML = "";
+            let filter = input.value.toLowerCase();
+
+            if (filter) {
+                jets.forEach(jet => {
+                    if (jet.toLowerCase().includes(filter)) {
+                        let div = document.createElement("div");
+                        div.innerHTML = jet;
+                        div.onclick = function () {
+                            input.value = jet;
+                            suggestions.innerHTML = "";
+                        };
+                        suggestions.appendChild(div);
+                    }
+                });
+            }
+        }
+
+        function searchJet() {
+            let jetName = document.getElementById("jetSearch").value;
+            if (jets.includes(jetName)) {
+                window.location.href = `booking.html?jet=${encodeURIComponent(jetName)}`;
+            } else {
+                alert("Please select a valid jet from the list.");
+            }
+        }
+    </script>
+
+    <style>
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #555;
+        }
+
+        .search-box i {
+            margin-left: 10px;
+            color: #555;
+            cursor: pointer;
+            font-size: 40px;
+        }
+
+        .suggestions {
+            background: #333;
+            border-radius: 10px;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 150px;
+            overflow-y: auto;
+            color: white;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #555;
+        }
+
+        .suggestion-item:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background: #0056b3;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+
+
+
+    <!-- NAVIGATION -->
+    <nav class="navigation-main">
+
+
+        <!-- CONTAINER FLUID -->
+        <div class="container-fluid">
+
+
+            <!-- NAVIGATION HEADER -->
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><i
+                        class="fa fa-bars" aria-hidden="true"></i></button>
+                <a class="navbar-brand" href="#"><img class="img-responsive" src="assets/img/a_jets.jpg" alt="" /></a>
+
+            </div>
+            <!-- /NAVIGATION HEADER -->
+
+
+            <!-- NAVIGATION HEADER -->
+            <div class="navbar-header">
+
+
+
+            </div>
+            <!-- /NAVIGATION HEADER -->
+
+
+            <!-- NAVBAR -->
+            <div id="navbar" class="navbar-collapse collapse">
+
+
+                <!-- MENU ITEMS LIST -->
+                <ul class="navigation-items nav navbar-nav navbar-right">
+
+
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  
+
+
+                </ul>
+
+                <!-- /MENU ITEMS LIST -->
+
+
+
+            </div>
+
+
+            <div class="search-container">
+                <h1>Find Your Jet</h1>
+                <div class="search-box">
+                    <input type="text" id="jetSearch" onkeyup="autocompleteSearch()" placeholder="Search for a jet...">
+                    <i class="fas fa-search" onclick="searchJet()"></i>
+                </div>
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+
+
+            <!-- /NAVBAR -->
+
+
+        </div>
+        <!-- /CONTAINER FLUID -->
+
+
+    </nav>
+    <!-- /NAVIGATION -->
+
+
+
+    <!-- INTRO -->
+    <section id="intro">
+
+
+        <!-- CONTAINER MID -->
+        <div class="container-mid text-center">
+
+
+            <!-- ANIMATION CONTAINER -->
+            <div class="animation-container animation-fade-down" data-animation-delay="0">
+
+                <h1>We are A-JETS a new<br>jet rental agency.</h1>
+
+            </div>
+            <!-- /ANIMATION CONTAINER -->
+
+
+            <!-- ANIMATION CONTAINER -->
+            <div class="animation-container animation-fade-up" data-animation-delay="300">
+
+                <p class="subline">Learn More</p>
+                <a href="#about" class="scroll-down smooth-scroll"><i class="fa fa-long-arrow-down"
+                        aria-hidden="true"></i></a>
+
+            </div>
+            <!-- /ANIMATION CONTAINER -->
+
+
+
+
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="fly-from">Fly from</label>
+                        <input type="text" id="fly-from" name="fly-from">
+                    </div>
+                    <div class="form-group">
+                        <label for="fly-to">Fly to</label>
+                        <input type="text" id="fly-to" name="fly-to">
+                    </div>
+                    <div class="form-group">
+                        <label for="select-date">Select date</label>
+                        <input type="date" id="select-date" name="select-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="select-time">Select time</label>
+                        <input type="time" id="select-time" name="select-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <input type="number" id="passengers" name="passengers">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <button type="button" id="bookNowBtn">BOOK NOW</button>
+                </form>
+            </div>
+            <p>*After sending request. We’ll contact you for more details about charter.</p>
+
+        </div>
+
+        <script>
+            document.getElementById("bookNowBtn").addEventListener("click", function () {
+                window.location.href = "booking.html"; // Change this to your actual booking page link
+            });
+        </script>
+
+
+
+
+
+
+
+
+
+    </section>
+    <!-- /INTRO -->
+
+
+
+    <!-- ABOUT -->
+    <section id="about" class="white">
+        <!-- CONTAINER FLUID -->
+        <div class="container-fluid about-container">
+            <div class="about-image">
+                <img src="assets/img/about/about.jpg" alt="About Us Image">
+            </div>
+            <div class="about-text">
+                <h4>ABOUT US</h4>
+                <h2 id="starter">WELCOME TO A-JETS RENTALS AND AVIATION</h2>
+                <p>
+                    Welcome aboard A-Jets, your premier private jet rental service. Founded with the mission to redefine
+                    luxury air travel, we pride ourselves on offering unparalleled service, convenience, and
+                    exclusivity. With a fleet of state-of-the-art private jets, we provide bespoke travel experiences
+                    that cater to the unique needs and preferences of our esteemed clientele. Whether it's a business
+                    trip, a family vacation, or a special occasion, A-Jets ensures a seamless journey from takeoff to
+                    landing.
+
+                    Our commitment to excellence begins with our meticulously maintained fleet of aircraft, each
+                    equipped with the latest technology and amenities to ensure a comfortable and enjoyable flight. Our
+                    private jets are designed to meet the highest standards of safety, performance, and luxury, offering
+                    a range of options to suit any travel need. From spacious cabins and plush seating to advanced
+                    entertainment systems and high-speed Wi-Fi, every detail is thoughtfully curated to enhance your
+                    in-flight experience.
+                </p>
+
+                <a href="about.html" class="button-class">DISCOVER MORE</a>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- /ABOUT -->
+
+
+    <!-- WORK -->
+    <section id="work" class="white">
+
+
+        <!-- CONTAINER FLUID -->
+        <div class="container-fluid text-center">
+
+
+            <p
+                style="font-size: 23px; font-weight: lighter; color: goldenrod; text-align: center; font-family: Arial, sans-serif; line-height: 1.3;">
+                Luxury Jets</p>
+            <h2
+                style="font-size: 46px; font-weight: bold; color: #0A2240; text-align: center; font-family: Arial, sans-serif; line-height: 1.3;">
+                Select the charters according <br> to your need
+            </h2>
+
+
+            <!-- WORK CAROUSEL -->
+            <div class="work-carousel owl-carousel scroll-animated-from-bottom">
+
+
+                <!-- ITEM -->
+                <div class="item">
+
+
+                    <div class="bg-image" style="background-image: url(assets/img/gulfstreamm_g550.jpg)"></div>
+
+
+                    <!-- INFO -->
+                    <a class="info" href="#" data-featherlight="#item-1-lightbox">
+
+
+                        <!-- CONTAINER MID -->
+                        <div class="container-mid">
+
+                            <h5>Gulfstream G550</h5>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                        </div>
+                        <!-- /CONTAINER MID -->
+
+
+                    </a>
+                    <!-- /INFO -->
+
+
+                    <!-- LIGHTBOX WRAPPER -->
+                    <div class="lightbox-wrapper">
+
+
+                        <!-- LIGHTBOX -->
+                        <div id="item-1-lightbox" class="work-lightbox">
+
+
+                            <img class="img-responsive" src="assets/img/work/inside_gulfstream.jpg" alt="image">
+
+
+                            <!-- DESCRIPTION -->
+                            <div class="description">
+
+                                <h3>Gulfstream G550</h3>
+                                <p class="subline"><b>Luxury Jet</b></p>
+
+                                <p>The <b>Gulfstream G550</b> is a <b>long-range, ultra -luxury business jet</b>
+                                    designed for <b> VIPs,executives, and high-net-worth individuals</b> who demand
+                                    top-tier performance, comfort, global reach. Known for its <b> spacious cabin,
+                                        advanced technology , and long-haul capabilities</b>, the G550 is a <b>benchmark
+                                        in private aviation.</b> </p>
+
+                                        <a href="booking.html" class="cta-button">Book Your Flight Now</a>
+
+
+
+                            </div>
+                            <!-- /DESCRIPTION -->
+
+
+                        </div>
+                        <!-- /LIGHTBOX -->
+
+
+                    </div>
+                    <!-- /LIGHTBOX WRAPPER -->
+
+
+                </div>
+                <!-- /ITEM -->
+
+
+                <!-- ITEM -->
+                <div class="item">
+
+
+                    <div class="bg-image" style="background-image: url(assets/img/boeing787.jpeg)"></div>
+
+
+                    <!-- INFO -->
+                    <a class="info" href="#" data-featherlight="#item-2-lightbox">
+
+
+                        <!-- CONTAINER MID -->
+                        <div class="container-mid">
+
+                            <h5>Boeing 787 Dreamliner</h5>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                        </div>
+                        <!-- /CONTAINER MID -->
+
+
+                    </a>
+                    <!-- /INFO -->
+
+
+                    <!-- LIGHTBOX WRAPPER -->
+                    <div class="lightbox-wrapper">
+
+
+                        <!-- LIGHTBOX -->
+                        <div id="item-2-lightbox" class="work-lightbox">
+
+
+                            <img class="img-responsive" src="assets/img/work/inside_boeing.jpg" alt="image">
+
+
+                            <!-- DESCRIPTION -->
+                            <div class="description">
+
+
+                                <h3>Boeing 787 Dreamliner</h3>
+                                <p class="subline"><b>Luxury Jet</b></p>
+
+                                <p>The Boeing 787 Dreamliner is a long-haul-wide-body jet designed for <b>premium travel
+                                        experiences</b>, particularly in business and first-class cabins</p>
+
+                                <p>Luxury Features:<br><br>
+                                    - Spacious <b>first-class suites</b> with full-flat beds, sliding doors,and personal
+                                    entertainment screens.<br>
+                                    - <b>Business-class lie-flat seats</b> with direct asile access. <br>
+                                    - Premium mood lighting and <b>high cabin humidy</b> for comfort on long flights
+                                    <br>
+                                    - Large dimmable windows for lights control <br>
+                                    - Options for <b>private charters</b> include customized interiors with lounges,
+                                    bedrooms, and even showers.
+                                </p>
+
+                                <a href="booking.html" class="cta-button">Book Your Flight Now</a>
+
+
+                            </div>
+                            <!-- /DESCRIPTION -->
+
+
+                        </div>
+                        <!-- /LIGHTBOX -->
+
+
+                    </div>
+                    <!-- /LIGHTBOX WRAPPER -->
+
+
+                </div>
+                <!-- /ITEM -->
+
+
+                <!-- ITEM -->
+                <div class="item">
+
+
+                    <div class="bg-image" style="background-image: url(assets/img/work/cessna.jpg)"></div>
+
+
+                    <!-- INFO -->
+                    <a class="info" href="#" data-featherlight="#item-3-lightbox">
+
+
+                        <!-- CONTAINER MID -->
+                        <div class="container-mid">
+
+                            <h5>Cessna Citation XLS</h5>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                        </div>
+                        <!-- /CONTAINER MID -->
+
+
+                    </a>
+                    <!-- /INFO -->
+
+
+                    <!-- LIGHTBOX WRAPPER -->
+                    <div class="lightbox-wrapper">
+
+
+                        <!-- LIGHTBOX -->
+                        <div id="item-3-lightbox" class="work-lightbox">
+
+
+                            <img class="img-responsive" src="assets/img/work/inside_Cessna.jpg" alt="image">
+
+
+                            <!-- DESCRIPTION -->
+                            <div class="description">
+
+
+                                <h3>Cessna Citation XLS</h3>
+                                <p class="subline"> <b>Moderate Jet</b></p>
+
+                                <p>The <b>Cessna Citation XLS</b> is a <b>midsize business jet</b> that strikes a
+                                    balance between <b>luxury and cost-effectiveness</b>, making it <b>ideal for
+                                        corporate and private travel</b></p>
+
+                                <p>Moderate Features <br> <br>
+                                    - <b>Spacious Stand-Up Cabin: More room than light jets</b> but not as extravagant
+                                    as large business jets. <br>
+                                    - <b>Comfortable Seatings: LEather club seating</b> that reclines and swivels for
+                                    relaxation or work. <br>
+                                    - <b>Noise-Reduction Technology: Quieter than smaller jets</b>, improving comfort.
+                                    <br>
+                                    - <b>Luxury Touches:</b> Features like <b>fold-out tables, refreshment center, and
+                                        lavatory</b> add convenience.<br>
+                                </p>
+
+                                <a href="booking.html" class="cta-button">Book Your Flight Now</a>
+
+
+                            </div>
+                            <!-- /DESCRIPTION -->
+
+
+                        </div>
+                        <!-- /LIGHTBOX -->
+
+
+                    </div>
+                    <!-- /LIGHTBOX WRAPPER -->
+
+
+                </div>
+                <!-- /ITEM -->
+
+
+                <!-- ITEM -->
+                <div class="item">
+
+
+                    <div class="bg-image" style="background-image: url(assets/img/work/Hondajet.jpg)"></div>
+
+
+                    <!-- INFO -->
+                    <a class="info" href="#" data-featherlight="#item-4-lightbox">
+
+
+                        <!-- CONTAINER MID -->
+                        <div class="container-mid">
+
+                            <h5>HondaJet Elite II</h5>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                        </div>
+                        <!-- /CONTAINER MID -->
+
+
+                    </a>
+                    <!-- /INFO -->
+
+
+                    <!-- LIGHTBOX WRAPPER -->
+                    <div class="lightbox-wrapper">
+
+
+                        <!-- LIGHTBOX -->
+                        <div id="item-4-lightbox" class="work-lightbox">
+
+
+                            <img class="img-responsive" src="assets/img/work/inside_hondajet.jpg" alt="image">
+
+
+                            <!-- DESCRIPTION -->
+                            <div class="description">
+
+
+                                <h3>HondaJet Elite II</h3>
+                                <p class="subline"><b>Economy Jet</b></p>
+
+                                <p>The <b>HondaJet Ellite II</b> is a <b>very light jet (VLJ)</b>, iideal for <b>cost
+                                        effefctive private travel</b> with a touch of premium comfort</p>
+
+                                <p>Economy Features <br> <br>
+                                    - <b>Smallest Private Jet Category: Compact cabins</b> designed for 4-6 passengers.
+                                    <br>
+                                    - <b>Limited In-Flight Amenities: No luxury entertainment systems, Wi-Fi, or
+                                        catering options</b> like larger <br>
+                                    - <b>Decent Comfort but Limited Space:</b> Seats are <b> comfortable but lack
+                                        stand-up room.</b>
+                                </p>
+
+                                <a href="booking.html" class="cta-button">Book Your Flight Now</a>
+
+
+
+                            </div>
+                            <!-- /DESCRIPTION -->
+
+
+                        </div>
+                        <!-- /LIGHTBOX -->
+
+
+                    </div>
+                    <!-- /LIGHTBOX WRAPPER -->
+
+
+                </div>
+                <!-- /ITEM -->
+
+
+                <!-- ITEM -->
+                <div class="item">
+
+
+                    <div class="bg-image" style="background-image: url(assets/img/work/phenom_100.jpg)"></div>
+
+
+                    <!-- INFO -->
+                    <a class="info" href="#" data-featherlight="#item-5-lightbox">
+
+
+                        <!-- CONTAINER MID -->
+                        <div class="container-mid">
+
+                            <h5>Phenom 100</h5>
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                        </div>
+                        <!-- /CONTAINER MID -->
+
+
+                    </a>
+                    <!-- /INFO -->
+
+
+                    <!-- LIGHTBOX WRAPPER -->
+                    <div class="lightbox-wrapper">
+
+
+                        <!-- LIGHTBOX -->
+                        <div id="item-5-lightbox" class="work-lightbox">
+
+
+                            <img class="img-responsive" src="assets/img/work/insdie_phenom.jpg" alt="image">
+
+
+                            <!-- DESCRIPTION -->
+                            <div class="description">
+
+
+                                <h3>Phenom 100</h3>
+                                <p class="subline"><b>Economy Jet</b></p>
+
+                                <p>The <b>Embraer Phenom 100</b> is a <b>Very Light Jet(VLJ) designed for short-haul,
+                                        cost-effective private travel.</b> It's pne pf the most popular entry-level
+                                    jets, known for its <b>modern design, fuel effeciency, and ease of operation.</b>
+                                </p>
+
+                                <p>Economy Features<br> <br>
+                                    - <b>Simple Interior Design: FUnctional leather seating</b> but <b>no premium wood
+                                        paneling or lavish materials</b> like in luxury jets. <br>
+                                    - <b>Fast Climb Rate:</b> Reaches <b>cruising altitude quickly</b>,reducing time
+                                    spent in fuel-hungry lower altitudes <br>
+                                    - <b>Operates from Small Airports:</b> Can land at <b> regional airports</b>,
+                                    reducing airport fees and allowing more direct routes.
+
+
+                                </p>
+
+                                <a href="booking.html" class="cta-button">Book Your Flight Now</a>
+
+
+                            </div>
+                            <!-- /DESCRIPTION -->
+
+
+                        </div>
+                        <!-- /LIGHTBOX -->
+
+
+                    </div>
+                    <!-- /LIGHTBOX WRAPPER -->
+
+
+                </div>
+                <!-- /ITEM -->
+
+
+            </div>
+            <!-- WORK CAROUSEL -->
+
+
+        </div>
+        <!-- /CONTAINER FLUID -->
+
+
+    </section>
+    <!-- /WORK -->
+
+
+
+    <!-- CLIENTS -->
+    <section id="clients">
+
+
+        <!-- CONTAINER FLUID -->
+        <div class="container-fluid text-center">
+
+
+            <h3 class="headline scroll-animated-from-bottom">What Clients say about us.</h3>
+
+
+            <!-- CLIENT FEEDBACK -->
+            <div class="client-feedback">
+
+
+                <!-- CLIENT FEEDBACK ITEM -->
+                <div class="client-feedback-item row">
+
+
+                    <!-- COLUMN -->
+                    <div class="col-sm-3 text-left scroll-animated-from-bottom">
+
+                        <img class="img-responsive logo" src="assets/img/a_jets.jpg" alt="image">
+
+                    </div>
+                    <!-- /COLUMN -->
+
+
+                    <!-- COLUMN -->
+                    <div class="col-sm-9 text-left scroll-animated-from-bottom">
+
+                        <p>“A-JETS has established itself as a premier choice for luxury private aviation, serving a
+                            distinguished clientele that includes business executives, high-net-worth individuals,
+                            celebrities, and government officials. Clients consistently praise the company for its
+                            commitment to excellence, citing the exceptional customer service, seamless booking process,
+                            and world-class fleet of aircraft that offer both comfort and security.”</p>
+
+                    </div>
+                    <!-- /COLUMN -->
+
+
+                </div>
+                <!-- /CLIENT FEEDBACK ITEM -->
+
+
+                <!-- CLIENT FEEDBACK ITEM -->
+                <div class="client-feedback-item row">
+
+
+                    <!-- COLUMN -->
+                    <div class="col-sm-3 text-left scroll-animated-from-bottom">
+
+                        <img class="img-responsive logo" src="assets/img/a_jets.jpg" alt="image">
+
+                    </div>
+                    <!-- /COLUMN -->
+
+
+                    <!-- COLUMN -->
+                    <div class="col-sm-9 text-left scroll-animated-from-bottom">
+
+                        <p>“Business travelers value A-JETS for its reliability, ensuring they can reach their
+                            destinations on time with the utmost efficiency. Many appreciate the personalized in-flight
+                            experience, which includes gourmet catering, spacious seating, and cutting-edge technology
+                            to facilitate productivity in the air..”</p>
+
+                    </div>
+                    <!-- /COLUMN -->
+
+
+                </div>
+                <!-- /CLIENT FEEDBACK ITEM -->
+
+
+                <!-- CLIENT FEEDBACK ITEM -->
+                <div class="client-feedback-item row">
+
+
+                    <!-- COLUMN -->
+                    <div class="col-sm-3 text-left scroll-animated-from-bottom">
+
+                        <img class="img-responsive logo" src="assets/img/a_jets.jpg" alt="image">
+
+                    </div>
+                    <!-- /COLUMN -->
+
+
+                    <!-- COLUMN -->
+                    <div class="col-sm-9 text-left scroll-animated-from-bottom">
+
+                        <p>“Leisure travelers highlight the exclusivity and privacy A-JETS provides, allowing them to
+                            travel with their families and loved ones in a stress-free, luxurious environment. Frequent
+                            flyers often mention how A-JETS’ attention to detail, from personalized flight itineraries
+                            to VIP ground transportation, sets it apart from other private jet services.”</p>
+                    </div>
+                    <!-- /COLUMN -->
+
+                </div>
+                <!-- /CLIENT FEEDBACK ITEM -->
+
+
+                <a href="clients.html" class="button-read">READ MORE</a>
+
+
+
+
+            </div>
+            <!-- /CLIENT FEEDBACK -->
+
+
+        </div>
+        <!-- /CONTAINER FLUID -->
+
+
+    </section>
+    <!-- /CLIENTS -->
+
+
+
+
+    <div>
+
+    </div>
+    <!-- /CONTAINER FLUID -->
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <section id="footer">
+
+        <!-- CONTACT -->
+        <section id="contact" class="white">
+
+
+            <!-- CONTAINER FLUID -->
+            <div class="container-fluid text-center">
+
+
+                <h3 class="headline scroll-animated-from-bottom">Get in touch with us.</h3>
+
+
+                <!-- CONTACT LIST -->
+                <ul class="contact-list">
+
+
+                    <!-- CONTACT LIST ITEM -->
+                    <li class="contact-list-item scroll-animated-from-bottom">
+
+
+                        <!-- CONTACT TYPE -->
+                        <div class="contact-type">
+
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <h6>Email</h6>
+
+                        </div>
+                        <!-- /CONTACT TYPE -->
+
+
+                        <h6>archangel7480@gmail.com</h6>
+
+
+                    </li>
+                    <!-- /CONTACT LIST ITEM -->
+
+
+                    <!-- CONTACT LIST ITEM -->
+                    <li class="contact-list-item scroll-animated-from-bottom">
+
+
+                        <!-- CONTACT TYPE -->
+                        <div class="contact-type">
+
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <h6>Phone</h6>
+
+                        </div>
+                        <!-- /CONTACT TYPE -->
+
+
+                        <h6>+233 (0) 5 3360 0065</h6>
+
+
+                    </li>
+                    <!-- /CONTACT LIST ITEM -->
+
+
+                    <!-- CONTACT LIST ITEM -->
+                    <li class="contact-list-item scroll-animated-from-bottom">
+
+
+                        <!-- CONTACT TYPE -->
+                        <div class="contact-type">
+
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <h6>Address</h6>
+
+                        </div>
+                        <!-- /CONTACT TYPE -->
+
+
+                        <h6>Tesano Crescent, St. No.1, Ghana</h6>
+
+
+                    </li>
+                    <!-- /CONTACT LIST ITEM -->
+                    <!-- CONTAINER FLUID -->
+                    <div class="container-fluid">
+
+
+                        <!-- ROW -->
+                        <div class="row">
+
+
+                            <!-- COLUMN -->
+                            <div class="col-sm-6 scroll-animated-from-bottom text-left">
+
+                                <p>© 2025 A-JETS | Design by ArchTechnologies</p>
+
+                            </div>
+                            <!-- /COLUMN -->
+
+
+                            <!-- COLUMN -->
+                            <div class="col-sm-6 scroll-animated-from-bottom text-right">
+
+
+                                <!-- SOCIAL ICONS -->
+                                <ul class="social-icons">
+
+
+                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="archangel7480@gmail.com"><i class="fa fa-google-plus"
+                                                aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+
+                                </ul>
+                                <!-- /SOCIAL ICONS -->
+
+
+                            </div>
+                            <!-- /COLUMN -->
+
+
+                        </div>
+                        <!-- ROW -->
+
+
+                    </div>
+
+                    <!-- /CONTAINER FLUID -->
+
+                </ul>
+            </div>
+
+        </section>
+        <!-- /FOOTER -->
+
+
+
+        <!-- BACKGROUND CONTENT -->
+        <div class="background-content parallax-on">
+
+
+            <!-- BACKGROUND CONTENT INNER -->
+            <div class="background-content-inner">
+
+                <div class="background-overlay"></div>
+                <div class="background-img layer" data-depth="0.1"></div>
+
+            </div>
+            <!-- /BACKGROUND CONTENT INNER -->
+
+
+        </div>
+        <!-- /BACKGROUND CONTENT -->
+
+
+
+
+
+        <!-- JAVASCRIPTS -->
+        <script type="text/javascript" src="assets/js/plugins.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+
+    </section>
+</body>
+
+
+</html>
