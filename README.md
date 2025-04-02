@@ -18,7 +18,7 @@ A-Jets Rental is a luxury jet booking platform designed for efficiency, security
 ## Installation Guide
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ajets-rental.git
+   git clone https://github.com/DONARCHH/ajets-rental.git
    
 Set up the database:
 
